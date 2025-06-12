@@ -1,0 +1,254 @@
+* {
+  font-family: 'Manrope', sans-serif !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #000;
+}
+
+.main-container,
+.services-section,
+.faq-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 32px auto;
+  padding: 0 2vw;
+  box-sizing: border-box;
+}
+
+.services-title,
+.faq-title {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 32px 0 24px 0;
+  padding: 0 0 0 0;
+}
+
+.services-slider {
+  display: flex;
+  gap: 2vw;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; 
+}
+
+.services-slider::-webkit-scrollbar {
+  display: none; 
+}
+
+.service-card {
+  width: 400px;
+  height: 240px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  scroll-snap-align: start;
+  cursor: grab;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.service-card__caption {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  width: 90%;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #fff;
+  background: none;
+  display: block;
+  padding: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  overflow: hidden;
+  height: auto;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: #F4F4F6;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faq-question {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px 16px;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.faq-toggle {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.faq-toggle svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  font-size: 16px;
+  color: #222;
+  padding: 0 16px 0 16px;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s;
+}
+
+.faq-item.active .faq-answer {
+  padding: 0 16px 16px 16px;
+}
+
+@media (min-width: 900px) {
+  .service-card {
+    width: 350px;
+    height: 280px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-container,
+  .services-section,
+  .faq-section {
+    max-width: 100vw;
+    padding: 0 4vw;
+  }
+  .services-title,
+  .faq-title {
+    font-size: 28px;
+    margin: 24px 0 16px 0;
+  }
+  .service-card {
+    width: 320px;
+    height: 192px;
+    border-radius: 10px;
+  }
+  .service-card__caption {
+    top: 12px;
+    left: 16px;
+    width: 70%;
+    height: auto;
+    font-size: 18px;
+    padding: 0;
+  }
+  .faq-question {
+    font-size: 16px;
+    padding: 12px 10px;
+    font-weight: 400;
+  }
+  .faq-answer {
+    font-size: 14px;
+    padding: 0 10px 0 10px;
+  }
+  .faq-item.active .faq-answer {
+    padding: 0 10px 10px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-container,
+  .services-section,
+  .faq-section {
+    max-width: 100vw;
+    padding: 0 2vw;
+  }
+  .services-title,
+  .faq-title {
+    font-size: 20px;
+    margin: 16px 0 10px 0;
+  }
+  .services-slider {
+    flex-direction: column;
+    gap: 10px;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+  .service-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .service-card__caption {
+    top: 8px;
+    left: 8px;
+    width: 90%;
+    font-size: 14px;
+    padding: 0;
+    height: auto;
+  }
+  .faq-list {
+    gap: 6px;
+  }
+  .faq-item {
+    border-radius: 8px;
+  }
+  .faq-question {
+    font-size: 14px;
+    padding: 8px 6px;
+    font-weight: 400;
+    min-height: 36px;
+  }
+  .faq-answer {
+    font-size: 12px;
+    padding: 0 6px 0 6px;
+  }
+  .faq-item.active .faq-answer {
+    padding: 0 6px 6px 6px;
+  }
+  .faq-toggle {
+    width: 20px;
+    height: 20px;
+  }
+  .faq-toggle svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.service-card--zoom { /* для 3 картинки фокус на правом нижнем углу */
+  background-size: 200% !important;
+  background-position: right bottom !important;
+} 
